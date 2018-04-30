@@ -18,16 +18,14 @@ import java.util.Date;
 public class Set {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "set_id")
-    private Long id;
+    private String id;
     @Column(name = "user_id")
     private Long userId;
     @Column(name = "exercise_id")
-    private Long exerciseId;
+    private String exerciseId;
     @Column(name = "training_id")
-    private Long trainingId;
+    private String trainingId;
     @Column(name = "set_date")
     private Date date;
     @Column(name = "reps")

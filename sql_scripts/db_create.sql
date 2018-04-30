@@ -1,41 +1,60 @@
-CREATE TABLE exercises
+create table users
 (
-    exercise_id INTEGER DEFAULT nextval('exercises_exercise_id_seq'::regclass) PRIMARY KEY NOT NULL,
-    name VARCHAR NOT NULL,
-    description VARCHAR
-);
-CREATE TABLE sets
+    user_id serial not null
+        constraint users_pkey
+        primary key,
+    username varchar not null,
+    password varchar not null,
+    first_name varchar,
+    last_name varchar,
+    user_role varchar not null,
+    sex varchar,
+    email varchar not null,
+    weight real,
+    height real
+)
+;
+
+create table exercises
 (
-    set_id INTEGER DEFAULT nextval('sets_set_id_seq'::regclass) PRIMARY KEY NOT NULL,
-    user_id INTEGER NOT NULL,
-    exercise_id INTEGER NOT NULL,
-    set_time TIMESTAMP NOT NULL,
-    reps INTEGER NOT NULL,
-    training_id INTEGER NOT NULL
-);
-CREATE TABLE trainings
+    exercise_id serial not null
+        constraint exercises_pkey
+        primary key,
+    name varchar not null,
+    description varchar,
+    creator integer
+)
+;
+
+create table sets
 (
-    training_id INTEGER DEFAULT nextval('trainings_training_id_seq'::regclass) PRIMARY KEY NOT NULL,
-    description VARCHAR,
-    date DATE NOT NULL
-);
-CREATE TABLE user_params
+    set_id serial not null
+        constraint sets_pkey
+        primary key,
+    user_id integer not null,
+    exercise_id varchar not null,
+    set_time timestamp not null,
+    reps integer not null,
+    training_id varchar not null
+)
+;
+
+create table trainings
 (
-    user_id INTEGER NOT NULL,
-    height REAL,
-    weight INTEGER,
-    date DATE NOT NULL
-);
-CREATE TABLE users
+    training_id serial not null
+        constraint trainings_pkey
+        primary key,
+    description varchar,
+    date date not null
+)
+;
+
+create table user_params
 (
-    user_id INTEGER DEFAULT nextval('users_user_id_seq'::regclass) PRIMARY KEY NOT NULL,
-    username VARCHAR NOT NULL,
-    password VARCHAR NOT NULL,
-    first_name VARCHAR,
-    last_name VARCHAR,
-    user_role VARCHAR NOT NULL,
-    sex VARCHAR,
-    email VARCHAR NOT NULL,
-    weight REAL,
-    height REAL
-);
+    user_id integer not null,
+    height real,
+    weight integer,
+    date date not null
+)
+;
+

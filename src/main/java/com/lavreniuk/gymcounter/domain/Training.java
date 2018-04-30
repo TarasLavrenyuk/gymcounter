@@ -22,7 +22,7 @@ public class Training {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "training_id")
-    private Long id;
+    private String id;
     @Column(name = "description")
     private String description;
     @Column(name = "date")

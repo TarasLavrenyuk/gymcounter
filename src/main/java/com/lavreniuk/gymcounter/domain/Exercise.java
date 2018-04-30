@@ -17,10 +17,8 @@ import javax.persistence.*;
 public class Exercise {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "exercise_id")
-    private Long id;
+    private String id;
     @Column(name = "name")
     private String name;
     @Column(name = "description")

@@ -11,12 +11,19 @@
                     http://www.springframework.org/schema/data/jpa
                     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
+    <!--<bean id="dataSource"-->
+          <!--class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="org.postgresql.Driver"/>-->
+        <!--<property name="url" value="jdbc:postgresql://localhost:5432/gymcounter"/>-->
+        <!--<property name="username" value="postgres"/>-->
+        <!--<property name="password" value=""/>-->
+    <!--</bean>-->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/gymcounter"/>
-        <property name="username" value="postgres"/>
-        <property name="password" value=""/>
+        <property name="url" value="jdbc:postgresql://ec2-54-247-125-137.eu-west-1.compute.amazonaws.com:5432/dd21qsfm60bnnt?sslmode=require"/>
+        <property name="username" value="mpnvfztilksoej"/>
+        <property name="password" value="0e05c0b3fef6867716bff71c8aa5dcaa86010a0a5cbb0726df612e23aeccbe09"/>
     </bean>
 
     <bean id="hibernateJpaVendorAdapter"
