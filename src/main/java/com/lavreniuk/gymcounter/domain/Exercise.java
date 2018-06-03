@@ -18,7 +18,7 @@ public class Exercise {
 
     @Id
     @Column(name = "exercise_id")
-    private String id;
+    private String exerciseId;
     @Column(name = "name")
     private String name;
     @Column(name = "description")

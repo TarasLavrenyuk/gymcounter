@@ -2,7 +2,7 @@ package com.lavreniuk.gymcounter.security;
 
 import com.lavreniuk.gymcounter.domain.User;
 import com.lavreniuk.gymcounter.security.utils.JwtUtils;
-import com.lavreniuk.gymcounter.service.UserService.UserService;
+import com.lavreniuk.gymcounter.service.UserService;
 import com.lavreniuk.gymcounter.utils.PasswordHashing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

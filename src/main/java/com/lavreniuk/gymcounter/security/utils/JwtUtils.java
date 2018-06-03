@@ -19,7 +19,7 @@ public class JwtUtils {
     private String secret;
 
     /**
-     * Tries to parse specified String as a JWT token. If successful, returns User object with username, id and role prefilled (extracted from token).
+     * Tries to parse specified String as a JWT token. If successful, returns User object with username, trainingId and role prefilled (extracted from token).
      * If unsuccessful (token is invalid or not containing all required user properties), simply returns null.
      *
      * @param token the JWT token to parse

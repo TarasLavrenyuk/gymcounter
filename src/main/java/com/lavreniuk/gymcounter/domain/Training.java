@@ -6,6 +6,7 @@ import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -19,18 +20,28 @@ import java.util.List;
 public class Training {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "training_id")
-    private String id;
+    private String trainingId;
+    @Column(name = "user_id")
+    private Long userId;
     @Column(name = "description")
     private String description;
     @Column(name = "date")
     private Date date;
 
+
     @Transient
     private List<Set> sets;
+    @Transient
+    private User user;
 
     public Training() {
+    }
+
+    public void addSet(Set set) {
+        if (sets == null) {
+            sets = new LinkedList<>();
+        }
+        sets.add(set);
     }
 }

@@ -16,6 +16,7 @@
 
     <import resource="data-context.xml"/>
     <import resource="security-context.xml"/>
+    <import resource="aspect-context.xml"/>
 
 
 </beans>

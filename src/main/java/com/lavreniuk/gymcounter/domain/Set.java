@@ -19,9 +19,7 @@ public class Set {
 
     @Id
     @Column(name = "set_id")
-    private String id;
-    @Column(name = "user_id")
-    private Long userId;
+    private String setId;
     @Column(name = "exercise_id")
     private String exerciseId;
     @Column(name = "training_id")
@@ -31,8 +29,6 @@ public class Set {
     @Column(name = "reps")
     private Integer reps;
 
-    @Transient
-    private User user;
     @Transient
     private Exercise exercise;
     @Transient

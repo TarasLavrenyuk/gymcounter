@@ -28,9 +28,10 @@ public interface UserRepo extends JpaRepository<User, Long> {
     List<User> getByUsernameOrEmail(@Param("username") String username,
                                     @Param("email") String email);
 
-    @Query(value = "INSERT INTO users (username, password, email, user_role) VALUES ( :username , :password , :email , 'ROLE_USER') RETURNING user_id;",
+    @Query(value = "INSERT INTO users (username, password, email, user_role, phone) VALUES ( :username , :password , :email , 'ROLE_USER', :phone ) RETURNING user_id;",
             nativeQuery = true)
     Long createUser(@Param("username") String username,
                     @Param("password") String password,
-                    @Param("email") String email);
+                    @Param("email") String email,
+                    @Param("phone") String phone);
 }

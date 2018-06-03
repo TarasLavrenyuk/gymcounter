@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
  * @date 28.04.18.
  */
 @Repository
-public interface ExerciseRepo extends JpaRepository<Exercise, Long> {
-
-
+public interface ExerciseRepo extends JpaRepository<Exercise, String> {
 
 }

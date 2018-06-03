@@ -9,7 +9,7 @@ public enum ResponseMessages {
     UserWithSuchEMailAlreadyExistError("User with such email already exist."),
     UserWithSuchUsernameAlreadyExistError("User with such username already exist."),
     AuthenticationFailed("Authentication failed. Incorrect credentials."),
-    UserIdNotFound("There is no user id in request. Please specify user id.");
+    UserIdNotFound("There is no user trainingId in request. Please specify user trainingId.");
 
     private String message;
 
