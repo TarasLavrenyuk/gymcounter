@@ -38,10 +38,23 @@ public class Training {
     public Training() {
     }
 
+    public Training(String trainingId, String description, Date date) {
+        this.trainingId = trainingId;
+        this.description = description;
+        this.date = date;
+    }
+
     public void addSet(Set set) {
-        if (sets == null) {
-            sets = new LinkedList<>();
+        if (this.sets == null) {
+            this.sets = new LinkedList<>();
         }
-        sets.add(set);
+        this.sets.add(set);
+    }
+
+    public void addSets(List<Set> sets) {
+        if (this.sets == null) {
+            this.sets = new LinkedList<>();
+        }
+        this.sets.addAll(sets);
     }
 }

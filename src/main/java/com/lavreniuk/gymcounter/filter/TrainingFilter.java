@@ -14,4 +14,11 @@ public class TrainingFilter {
     private Date from;
     private Date to;
 
+    public TrainingFilter() {
+    }
+
+    public TrainingFilter(Date from, Date to) {
+        this.from = from;
+        this.to = to;
+    }
 }

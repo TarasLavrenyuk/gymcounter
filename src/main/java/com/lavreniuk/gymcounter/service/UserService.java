@@ -71,12 +71,6 @@ public class UserService {
         if (user.getSex() != null) {
             userToUpdate.setSex(user.getSex());
         }
-        if (user.getWeight() != null) {
-            userToUpdate.setWeight(user.getWeight());
-        }
-        if (user.getHeight() != null) {
-            userToUpdate.setHeight(user.getHeight());
-        }
         userRepo.save(userToUpdate);
         return userToUpdate;
     }

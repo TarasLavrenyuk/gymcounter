@@ -24,10 +24,12 @@ public class Set {
     private String exerciseId;
     @Column(name = "training_id")
     private String trainingId;
-    @Column(name = "set_date")
+    @Column(name = "set_time")
     private Date date;
     @Column(name = "reps")
     private Integer reps;
+    @Column(name = "weight")
+    private Double weight;
 
     @Transient
     private Exercise exercise;
@@ -35,5 +37,14 @@ public class Set {
     private Training training;
 
     public Set() {
+    }
+
+    public Set(String setId, String exerciseId, String trainingId, Date date, Integer reps, Double weight) {
+        this.setId = setId;
+        this.exerciseId = exerciseId;
+        this.trainingId = trainingId;
+        this.date = date;
+        this.reps = reps;
+        this.weight = weight;
     }
 }

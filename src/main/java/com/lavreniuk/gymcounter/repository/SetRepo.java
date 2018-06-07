@@ -15,7 +15,7 @@ import java.util.List;
 @Repository
 public interface SetRepo extends JpaRepository<Set, String> {
 
-    @Query(value = "SELECT * FROM gymcounter.public.sets S " +
+    @Query(value = "SELECT * FROM sets S " +
             " WHERE S.training_id IN :trainingsIds ", nativeQuery = true)
     List<Set> findByTrainingsIds(@Param("trainingsIds") List<String> trainingsIds);
 }

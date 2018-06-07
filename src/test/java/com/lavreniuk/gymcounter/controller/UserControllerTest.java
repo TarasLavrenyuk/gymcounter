@@ -29,8 +29,7 @@ public class UserControllerTest extends BaseControllerTest {
     //    @Test
     public void testUpdateUser() throws Exception {
         User user = new User();
-        user.setWeight(80.);
-        user.setHeight(186.);
+        user.setFirstName("James");
         MvcResult mvcResult = mockMvc
                 .perform(post("/updateUser")
                         .headers(getHeaders("taras.lavreniuk", "123456"))

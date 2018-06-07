@@ -33,6 +33,8 @@ public class SyncController extends BaseController {
 
     @RequestMapping(value = "/retrieveData", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Response retrieveData(@RequestBody TrainingFilter filter) {
+        System.out.println(filter.getFrom());
+        System.out.println(filter.getTo());
         List<Training> retrieve = syncService.retrieve(filter);
         return new SuccessResponse<>(HttpStatus.OK, retrieve);
     }
