@@ -54,7 +54,7 @@ public class UserControllerTest extends BaseControllerTest {
         System.out.println(mvcResult.getResponse().getContentAsString());
     }
 
-    @Test
+    //    @Test
     public void testRegister() throws Exception {
         User user = new User("taras.lavreniuk", "123456");
         user.setEmail("taras@mail.com");

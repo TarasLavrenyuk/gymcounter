@@ -52,7 +52,7 @@ public class UserParamControllerTest extends BaseControllerTest {
         System.out.println(mvcResult.getResponse().getContentAsString());
     }
 
-    @Test
+    //    @Test
     public void testGetUserParams() throws Exception {
         MvcResult mvcResult = mockMvc
                 .perform(get("/getUserParams")
@@ -63,7 +63,7 @@ public class UserParamControllerTest extends BaseControllerTest {
         System.out.println(mvcResult.getResponse().getContentAsString());
     }
 
-    @Test
+    //    @Test
     public void testGetUserParam() throws Exception {
         Param param = new Param();
         param.setParamId("713003249b9b452094f42394171b6139");
