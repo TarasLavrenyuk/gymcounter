@@ -1,10 +1,8 @@
 package com.lavreniuk.gymcounter.controller;
 
 import com.lavreniuk.gymcounter.domain.Param;
-import com.lavreniuk.gymcounter.domain.User;
 import com.lavreniuk.gymcounter.domain.UserParam;
 import com.lavreniuk.gymcounter.utils.GeneratorUtil;
-import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -27,7 +25,7 @@ public class UserParamControllerTest extends BaseControllerTest {
         Param param = new Param(GeneratorUtil.generate(), "weight", "kg");
         MvcResult mvcResult = mockMvc
                 .perform(put("/addParam")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(param))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
@@ -44,7 +42,7 @@ public class UserParamControllerTest extends BaseControllerTest {
         userParams.add(new UserParam(GeneratorUtil.generate(), paramId, 93., new Date()));
         MvcResult mvcResult = mockMvc
                 .perform(put("/saveUserParam")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(userParams))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
@@ -56,7 +54,7 @@ public class UserParamControllerTest extends BaseControllerTest {
     public void testGetUserParams() throws Exception {
         MvcResult mvcResult = mockMvc
                 .perform(get("/getUserParams")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -69,7 +67,7 @@ public class UserParamControllerTest extends BaseControllerTest {
         param.setParamId("713003249b9b452094f42394171b6139");
         MvcResult mvcResult = mockMvc
                 .perform(get("/getUserParam")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(param))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())

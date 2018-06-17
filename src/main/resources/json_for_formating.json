@@ -1,34 +1,126 @@
 {
   "code": 200,
   "phrase": "OK",
-  "object": null,
-  "objects": [
-    {
-      "userParamId": "2e518ea4b6854f9f9c36c4f68d793c95",
-      "paramId": "713003249b9b452094f42394171b6139",
-      "userId": 3,
-      "value": 91.0,
-      "date": 1527973200000,
-      "name": "weight",
-      "unit": "kg"
-    },
-    {
-      "userParamId": "fc6dbed9cf5c433281824af12dd40ed3",
-      "paramId": "713003249b9b452094f42394171b6139",
-      "userId": 3,
-      "value": 92.0,
-      "date": 1527973200000,
-      "name": "weight",
-      "unit": "kg"
-    },
-    {
-      "userParamId": "cefdc529f07348c08b6c2fd4c61dfbbd",
-      "paramId": "713003249b9b452094f42394171b6139",
-      "userId": 3,
-      "value": 93.0,
-      "date": 1527973200000,
-      "name": "weight",
-      "unit": "kg"
-    }
-  ]
+  "object": {
+    "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+    "userId": 3,
+    "description": "Monday training",
+    "date": 1528318800000,
+    "sets": [
+      {
+        "setId": "78e4d89b79ca42298cf9e7bec0a91171",
+        "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 5,
+        "weight": 15.0,
+        "exercise": {
+          "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+          "name": "Жим",
+          "description": ""
+        },
+        "training": null
+      },
+      {
+        "setId": "aeb4e513029d404c90c1ece76d63bfdf",
+        "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 5,
+        "weight": 25.0,
+        "exercise": {
+          "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+          "name": "Жим",
+          "description": ""
+        },
+        "training": null
+      },
+      {
+        "setId": "247ade359d6344ee8a7350c468ee0c71",
+        "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 5,
+        "weight": 35.0,
+        "exercise": {
+          "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+          "name": "Жим",
+          "description": ""
+        },
+        "training": null
+      },
+      {
+        "setId": "eff8b9b441ed40f3891cdeef9fea4a61",
+        "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 5,
+        "weight": 40.0,
+        "exercise": {
+          "exerciseId": "fd2b040c2fb946ff96113696a5332a73",
+          "name": "Жим",
+          "description": ""
+        },
+        "training": null
+      },
+      {
+        "setId": "21bf46f7624f44a192d78832f20585c5",
+        "exerciseId": "64cac8ee959b413a904d4859e0686405",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 10,
+        "weight": 50.0,
+        "exercise": {
+          "exerciseId": "64cac8ee959b413a904d4859e0686405",
+          "name": "Тяга блока",
+          "description": null
+        },
+        "training": null
+      },
+      {
+        "setId": "400625e4bde443fbbd0137e7c07746ce",
+        "exerciseId": "64cac8ee959b413a904d4859e0686405",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 8,
+        "weight": 60.0,
+        "exercise": {
+          "exerciseId": "64cac8ee959b413a904d4859e0686405",
+          "name": "Тяга блока",
+          "description": null
+        },
+        "training": null
+      },
+      {
+        "setId": "bc603c7026d34233a0e241c2bd2a2a0f",
+        "exerciseId": "64cac8ee959b413a904d4859e0686405",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 6,
+        "weight": 70.0,
+        "exercise": {
+          "exerciseId": "64cac8ee959b413a904d4859e0686405",
+          "name": "Тяга блока",
+          "description": null
+        },
+        "training": null
+      },
+      {
+        "setId": "314dea294bac4c9a9e86e2a1f9610a70",
+        "exerciseId": "64cac8ee959b413a904d4859e0686405",
+        "trainingId": "922ef48a828b43cbbb7a293078df24ba",
+        "date": 1528363378394,
+        "reps": 4,
+        "weight": 75.0,
+        "exercise": {
+          "exerciseId": "64cac8ee959b413a904d4859e0686405",
+          "name": "Тяга блока",
+          "description": null
+        },
+        "training": null
+      }
+    ],
+    "user": null
+  },
+  "objects": null
 }

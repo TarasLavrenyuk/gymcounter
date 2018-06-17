@@ -35,6 +35,7 @@ public class SyncController extends BaseController {
     public Response retrieveData(@RequestBody TrainingFilter filter) {
         System.out.println(filter.getFrom());
         System.out.println(filter.getTo());
+        filter.setUserId(getCurrentUserId());
         List<Training> retrieve = syncService.retrieve(filter);
         return new SuccessResponse<>(HttpStatus.OK, retrieve);
     }

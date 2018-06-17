@@ -5,6 +5,7 @@ import com.lavreniuk.gymcounter.domain.dto.UserParamDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @author taras
  * @date 03.06.18.
  */
+@Repository
 public interface UserParamRepo extends JpaRepository<UserParam, String> {
 
     @Query(value = "SELECT * " +

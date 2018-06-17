@@ -30,8 +30,14 @@ public class TrainingSpecification {
 
     private static List<Predicate> toPredicates(final TrainingFilter filter, Root<Training> root, CriteriaQuery cq, CriteriaBuilder cb) {
         List<Predicate> predicates = new LinkedList<>();
-        Predicate userIdPredicate = cb.equal(root.<Long>get("userId"), AuthenticationUtils.getCurrentUserId());
-        predicates.add(userIdPredicate);
+        if (filter.getTrainingId() != null) {
+            Predicate trainingIdPredicate = cb.equal(root.<String>get("trainingId"), filter.getTrainingId());
+            predicates.add(trainingIdPredicate);
+        }
+        if (filter.getUserId() != null) {
+            Predicate userIdPredicate = cb.equal(root.<Long>get("userId"), filter.getUserId());
+            predicates.add(userIdPredicate);
+        }
         if (filter.getFrom() != null && filter.getTo() == null) {
             Predicate dateFromPredicate = cb.greaterThanOrEqualTo(root.get("date"), filter.getFrom());
             predicates.add(dateFromPredicate);

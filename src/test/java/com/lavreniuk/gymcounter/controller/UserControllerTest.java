@@ -1,7 +1,6 @@
 package com.lavreniuk.gymcounter.controller;
 
 import com.lavreniuk.gymcounter.domain.User;
-import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -32,7 +31,7 @@ public class UserControllerTest extends BaseControllerTest {
         user.setFirstName("James");
         MvcResult mvcResult = mockMvc
                 .perform(post("/updateUser")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(user))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())

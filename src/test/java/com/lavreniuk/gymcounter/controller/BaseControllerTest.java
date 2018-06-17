@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @date 29.04.18.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:test-context.xml"})
+@ContextConfiguration(locations = {"classpath:test-context.xml"})
 @WebAppConfiguration
 public class BaseControllerTest {
 
@@ -46,7 +46,7 @@ public class BaseControllerTest {
                 .build();
     }
 
-    protected HttpHeaders getHeaders(String username, String password) throws Exception {
+    protected HttpHeaders getAuthorizationHeaders(String username, String password) throws Exception {
         User user = new User(username, password);
         MvcResult mvcResult = mockMvc
                 .perform(post("/login")
@@ -59,7 +59,6 @@ public class BaseControllerTest {
         String token = obj.getString("object");
         HttpHeaders httpHeaders = getHeaders();
         httpHeaders.add("Authorization", "Bearer " + token);
-        httpHeaders.add("Content-Type", "application/json");
         return httpHeaders;
     }
 
@@ -67,6 +66,18 @@ public class BaseControllerTest {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Content-Type", "application/json");
         return httpHeaders;
+    }
+
+    protected HttpHeaders getHeadersWithParams(String... param) throws Exception {
+        HttpHeaders result = getHeaders();
+        if (param.length < 2 || param.length % 2 == 1) {
+            return result;
+        }
+        for (int i = 0; i < param.length; i += 2) {
+            result.add(param[i], param[i + 1]);
+        }
+
+        return result;
     }
 
     @Test

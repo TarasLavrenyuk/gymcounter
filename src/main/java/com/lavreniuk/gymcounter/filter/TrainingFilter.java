@@ -11,13 +11,20 @@ import java.util.Date;
 @Data
 public class TrainingFilter {
 
+    private Long userId;
     private Date from;
     private Date to;
+    private String trainingId;
 
     public TrainingFilter() {
     }
 
-    public TrainingFilter(Date from, Date to) {
+    public TrainingFilter(String trainingId) {
+        this.trainingId = trainingId;
+    }
+
+    public TrainingFilter(Long userId, Date from, Date to) {
+        this.userId = userId;
         this.from = from;
         this.to = to;
     }

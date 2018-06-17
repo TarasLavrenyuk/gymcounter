@@ -58,7 +58,7 @@ public class SyncControllerTest extends BaseControllerTest {
 
         MvcResult mvcResult = mockMvc
                 .perform(put("/saveData")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(trainings))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
@@ -67,7 +67,7 @@ public class SyncControllerTest extends BaseControllerTest {
         System.out.println(result);
     }
 
-    //    @Test
+    @Test
     public void testRetrieveData() throws Exception {
         Date from = new Date();
         from.setDate(1514764800);
@@ -77,11 +77,11 @@ public class SyncControllerTest extends BaseControllerTest {
         to.setDate(1546300800);
 //        to.setYear(119);
 //        to.setMonth(1);
-        TrainingFilter trainingFilter = new TrainingFilter(from, to);
+        TrainingFilter trainingFilter = new TrainingFilter(null, from, to);
 
         MvcResult mvcResult = mockMvc
                 .perform(post("/retrieveData")
-                        .headers(getHeaders("taras.lavreniuk", "123456"))
+                        .headers(getAuthorizationHeaders("taras.lavreniuk", "123456"))
                         .content(OBJECT_MAPPER.writeValueAsString(new TrainingFilter()))
                         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())

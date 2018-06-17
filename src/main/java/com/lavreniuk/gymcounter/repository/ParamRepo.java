@@ -3,6 +3,7 @@ package com.lavreniuk.gymcounter.repository;
 import com.lavreniuk.gymcounter.domain.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @author taras
  * @date 03.06.18.
  */
+@Repository
 public interface ParamRepo extends JpaRepository<Param, String> {
 
     @Query(value = "SELECT " +
