@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "phrase": "OK",
+  "object": null,
+  "objects": [
+    {
+      "paramId": "495e4945f87549dd87e8b491d02ec702",
+      "paramName": "triceps",
+      "unit": "cm",
+      "params": null
+    },
+    {
+      "paramId": "6b8dd9c1ec9e457b9699f8208d9c4201",
+      "paramName": "biceps",
+      "unit": "cm",
+      "params": null
+    },
+    {
+      "paramId": "713003249b9b452094f42394171b6139",
+      "paramName": "weight",
+      "unit": "kg",
+      "params": null
+    }
+  ]
+}
