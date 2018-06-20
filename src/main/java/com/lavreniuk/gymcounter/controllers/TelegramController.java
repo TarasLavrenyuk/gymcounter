@@ -29,7 +29,6 @@ public class TelegramController extends BaseController {
 
     @RequestMapping(value = "/training", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Response getTrainings(@RequestHeader("telegram-nickname") String telegramNickname) {
-        System.out.println("i am here");
         return new SuccessResponse<>(HttpStatus.OK, telegramService.getUserTrainings(telegramNickname));
     }
 
@@ -45,5 +44,28 @@ public class TelegramController extends BaseController {
         }
         return new SuccessResponse<>(HttpStatus.OK, training);
     }
+
+    @RequestMapping(value = "/exercise", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response getExercises(@RequestHeader("telegram-nickname") String telegramNickname) {
+        return new SuccessResponse<>(HttpStatus.OK, telegramService.getUserExercises(telegramNickname));
+    }
+
+    @RequestMapping(value = "/exercise/{exerciseId}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response getExercise(@RequestHeader("telegram-nickname") String telegramNickname,
+                                @PathVariable("exerciseId") String exerciseId) {
+        return new SuccessResponse<>(HttpStatus.OK, telegramService.getUserExercise(telegramNickname, exerciseId));
+    }
+
+    @RequestMapping(value = "/user_param", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response getUserParams(@RequestHeader("telegram-nickname") String telegramNickname) {
+        return new SuccessResponse<>(HttpStatus.OK, telegramService.getUserParams(telegramNickname));
+    }
+
+    @RequestMapping(value = "/user_param/{paramId}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response getUserParam(@RequestHeader("telegram-nickname") String telegramNickname,
+                                @PathVariable("paramId") String paramId) {
+        return new SuccessResponse<>(HttpStatus.OK, telegramService.getUserParam(telegramNickname, paramId));
+    }
+
 
 }

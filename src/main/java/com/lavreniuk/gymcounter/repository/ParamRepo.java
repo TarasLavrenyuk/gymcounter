@@ -23,4 +23,12 @@ public interface ParamRepo extends JpaRepository<Param, String> {
             nativeQuery = true)
     List<Param> getUserParams(@org.springframework.data.repository.query.Param("user_id") Long userId);
 
+
+    @Query(value = "SELECT DISTINCT P.* " +
+            "FROM params P " +
+            "  JOIN user_params UP ON P.param_id = UP.param_id " +
+            "  JOIN telegram_credentials TC ON UP.user_id = TC.user_id " +
+            "WHERE TC.telegram_username= :telegramNickname ;",
+            nativeQuery = true)
+    List<Param> getUserParamsListByTelegramNickname(@org.springframework.data.repository.query.Param("telegramNickname") String telegramNickname);
 }

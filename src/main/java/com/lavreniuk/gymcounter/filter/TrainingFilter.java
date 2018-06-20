@@ -3,6 +3,7 @@ package com.lavreniuk.gymcounter.filter;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author taras
@@ -15,6 +16,7 @@ public class TrainingFilter {
     private Date from;
     private Date to;
     private String trainingId;
+    private List<String> trainingsIds;
 
     public TrainingFilter() {
     }

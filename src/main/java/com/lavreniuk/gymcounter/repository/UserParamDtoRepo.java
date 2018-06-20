@@ -30,4 +30,21 @@ public interface UserParamDtoRepo extends JpaRepository<UserParamDto, String> {
     List<UserParamDto> getUserParam(@Param("param_id") String paramId,
                                     @Param("user_id") Long userId);
 
+
+    @Query(value = "SELECT " +
+            "  UP.user_param_id, " +
+            "  UP.user_id, " +
+            "  UP.value, " +
+            "  UP.param_date, " +
+            "  UP.param_id, " +
+            "  P.name, " +
+            "  P.unit " +
+            "FROM user_params UP " +
+            "  JOIN params P ON UP.param_id = P.param_id " +
+            "  JOIN telegram_credentials TC ON TC.user_id = UP.user_id " +
+            "WHERE UP.param_id = :paramId " +
+            "      AND TC.telegram_username = :telegramNickname " +
+            "ORDER BY UP.param_date; ", nativeQuery = true)
+    List<UserParamDto> getUserParamsByTelegramNickname(@Param("paramId") String paramId,
+                                                       @Param("telegramNickname") String telegramNickname);
 }

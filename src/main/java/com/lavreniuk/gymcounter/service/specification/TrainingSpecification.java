@@ -34,6 +34,10 @@ public class TrainingSpecification {
             Predicate trainingIdPredicate = cb.equal(root.<String>get("trainingId"), filter.getTrainingId());
             predicates.add(trainingIdPredicate);
         }
+        if (filter.getTrainingsIds() != null) {
+            Predicate trainingIdsPredicate = cb.isTrue(root.<String>get("trainingId").in(filter.getTrainingsIds()));
+            predicates.add(trainingIdsPredicate);
+        }
         if (filter.getUserId() != null) {
             Predicate userIdPredicate = cb.equal(root.<Long>get("userId"), filter.getUserId());
             predicates.add(userIdPredicate);

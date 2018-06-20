@@ -46,6 +46,10 @@ public class UserParamService {
         return userParamDtoRepo.getUserParam(paramId, userId);
     }
 
+    public List<UserParamDto> getUserParamsByTelegramNickname(String paramId, String telegramNickname) {
+        return userParamDtoRepo.getUserParamsByTelegramNickname(paramId, telegramNickname);
+    }
+
     public List<Param> getUserParams(Long userId) {
         List<Param> userParams = paramRepo.getUserParams(userId);
         for (Param userParam : userParams) {
@@ -56,4 +60,7 @@ public class UserParamService {
         return userParams;
     }
 
+    public List<Param> getUserParamsListByTelegramNickname(String telegramNickname) {
+        return paramRepo.getUserParamsListByTelegramNickname(telegramNickname);
+    }
 }

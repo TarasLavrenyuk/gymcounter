@@ -24,4 +24,13 @@ public interface TrainingRepo extends JpaRepository<Training, String>, JpaSpecif
             nativeQuery = true)
     List<Training> getTrainingsByTelegramNickName(@Param("telegramNickname") String telegramNickname);
 
+    @Query(value = "SELECT DISTINCT T.* " +
+            "FROM trainings T " +
+            "  JOIN telegram_credentials TC ON TC.user_id = T.user_id " +
+            "  JOIN sets S ON T.training_id = S.training_id " +
+            "WHERE TC.\"telegram_username\" = :telegramNickname " +
+            "      AND S.exercise_id = :exerciseId ;",
+            nativeQuery = true)
+    List<Training> getTrainingsByTelegramNickNameAndExerciseId(@Param("telegramNickname") String telegramNickname,
+                                                               @Param("exerciseId") String exerciseId);
 }
